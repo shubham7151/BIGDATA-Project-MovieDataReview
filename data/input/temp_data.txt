@@ -1,0 +1,50 @@
+1,The Nightmare Before Christmas,1993,3.9,4568
+2,The Mummy,1932,3.5,4388
+3,Orphans of the Storm,1921,3.2,9062
+4,The Object of Beauty,1991,2.8,6150
+5,Night Tide,1963,2.8,5126
+6,One Magic Christmas,1985,3.8,5333
+7,Muriel's Wedding,1994,3.5,6323
+8,Mother's Boys,1994,3.4,5733
+9,Nosferatu: Original Version,1929,3.5,5651
+10,Nick of Time,1995,3.4,5333
+11,Broken Blossoms,1919,3.3,5367
+12,Big Night,1996,3.6,6561
+13,The Birth of a Nation,1915,2.9,12118
+14,The Boys from Brazil,1978,3.6,
+15,Big Doll House,1971,2.9,5696
+16,The Breakfast Club,1985,4.0,5823
+17,The Bride of Frankenstein,1935,3.7,4485
+18,Beautiful Girls,1996,3.5,6755
+19,Bustin' Loose,1981,3.7,5598
+20,The Beguiled,1971,3.4,6307
+21,Born on the Fourth of July,1989,3.4,8646
+22,Broadcast News,1987,3.4,7940
+23,Swimming with Sharks,1994,3.3,5586
+24,Beavis and Butt-head Do America,1996,3.4,4852
+25,Brighton Beach Memoirs,1986,3.4,6564
+26,The Best of Times,1986,3.4,6247
+27,Brassed Off,1996,3.5,6040
+28,Last Tango in Paris,1972,3.1,7732
+29,Leprechaun 2,1994,3.2,5125
+30,Incident at Oglala: The Leonard Peltier Story,1992,3.7,5487
+31,Kalifornia,1993,3.4,7095
+32,The Lady Vanishes,1938,3.7,5762
+33,Jingle All the Way,1996,3.6,5371
+34,Killing Zoe,1993,3.4,5773
+35,King of Beggars,1992,3.6,6025
+36,Into the Woods,1990,4.0,9077
+37,Joe Kidd,1972,3.7,5252
+38,In Too Deep,1999,3.9,5823
+39,King Kong,1976,3.2,8044
+40,Internal Affairs,1990,3.5,6885
+41,Jesus Christ Superstar,1973,3.6,6388
+42,In the Name of the Father,1993,3.9,7972
+43,Easy Money,1987,2.8,5794
+44,Do the Right Thing,1989,3.6,7186
+45,Days of Heaven,1978,3.4,5628
+46,Drop Zone,1994,3.4,6087
+47,Escape from L.A.,1996,3.3,6039
+48,Emma,1996,3.5,7260
+49,Disco Godfather,1979,3.0,5869
+50,The Eiger Sanction,1975,3.5,7726
