@@ -35,37 +35,29 @@ def data_to_csv (data_array) :
     for data in data_array:
         if not data.isspace():
             csv_data_format.append( data.split(',') )
-        valid_data = map(lambda x : int(x),)
+        # valid_data = map(lambda x : int(x),)
     return csv_data_format
 
 def sec_to_hours (seconds):
     return time.strftime('%H:%M:%S',time.gmtime(float(seconds[-1])))
 
 def handle_null_time(time_index):
-    if time_index[-1]==']\n':
+    if time_index[-1]=='\n':
         time_index[-1] = -1
     return time_index
 
 def fetch_and_convert_data (csv_dataindex):
-    count=0
     for index in csv_dataindex:
-        print(sec_to_hours(index))
-        count= count +1
-        print(index)
-        print(count)
-    # print("count")
-    # print(count)
-
-    
+        if index[-1] == -1:
+            pass
+        else:
+            index[-1]=sec_to_hours(index)
 
 path = '../data/input/temp_data.txt'
 data_array = read_file(path)
 csv_data = data_to_csv(data_array)
+valida_data=[]
 for d in csv_data:
-    valida_data = handle_null_time(d)
-    print(valida_data)
-# print(csv_data[13])
-# fetch_and_convert_data(csv_data)
+    valida_data.append(handle_null_time(d))
+fetch_and_convert_data(valida_data)
 
-
-# print(csv_data)
