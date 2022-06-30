@@ -32,9 +32,9 @@ def read_file(path):
 def write_file(path,dataToWrite):
     import csv
     try:
-        with open ("../data/output/output",'w') as file:
+        with open (path,'w') as file:
             w = csv.writer(file,delimiter=',')
-            w.writerows(valida_data)
+            w.writerows(dataToWrite)
     except:
         print("Writing unsucessfull")
 
