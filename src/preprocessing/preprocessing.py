@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-
 def read_file(path):
     with open(path,'r') as raw_data :
         data_array= raw_data.readlines()
@@ -36,15 +35,5 @@ def fetch_and_convert_data (csv_dataindex):
         if index[-1] == -1:
             pass
         else:
-            index[-1]=sec_to_hours(index)
-
-path_input = '../data/input/Dataset_movie.txt'
-data_array = read_file(path_input)
-csv_data = data_to_csv(data_array)
-valida_data=[]
-for d in csv_data:
-    valida_data.append(handle_null_time(d))
-fetch_and_convert_data(valida_data)
-
-path_output = '../data/output/updated_dataset'
-write_file(path_output,valida_data)
+            print(index)
+            index[-1]=int(index[-1])
