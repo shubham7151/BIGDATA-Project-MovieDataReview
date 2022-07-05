@@ -22,8 +22,11 @@ conn = hive.connection_setup('localhost',10000,'hive')
 cursor = hive.create_cursor(conn)
 cursor.execute('create database if not exists project')
 cursor.execute('use project')
+hive.drop_table(cursor,"project","temp_movie")
+hive.drop_table(cursor,"project","movie")
+
 cursor.execute("create table if not exists temp_movie (id  int,title string, year int,rating float, dur int) row format delimited fields terminated by ','")
-cursor.execute("load data inpath 'tmp/updated_dataset' into table temp_movie ")
+cursor.execute("load data inpath '/tmp/updated_dataset' into table temp_movie ")
 cursor.execute("set hive.exec.dynamic.partition = true")
 cursor.execute("set hive.exec.dynamic.partition.mode = nonstrict")
 cursor.execute("create table if not exists movie (id  int,title string, year int, dur int) partitioned by (rating float) row format delimited fields terminated by ','")
@@ -32,23 +35,33 @@ cursor.execute("insert into table movie PARTITION (rating) select id,title,year,
 writeDir = {}
 print("Total number of movies:")
 cursor.execute("select count(*) from movie")
-writeDir["Total number of movies: "]= cursor.fetchone()[0]
+num_of_movie = cursor.fetchone()[0]
+print(num_of_movie)
+writeDir["Total number of movies: "]= num_of_movie
 
 print("Maximum rating given to any movie:")
 cursor.execute("select max(rating) from movie")
-writeDir["Maximum rating given to any movie:"] = cursor.fetchall()[0]
+max_rating = cursor.fetchall()[0]
+print(max_rating)
+writeDir["Maximum rating given to any movie:"] = max_rating
 
-print("Movie with max rating")
+print("Movie with max rating:")
 cursor.execute('select title,rating from movie where rating=(select max(rating) from movie)')
-writeDir["Movie with max rating:"] = cursor.fetchall()
+mov_max_rating = cursor.fetchall()
+print(mov_max_rating)
+writeDir["Movie with max rating:"] = mov_max_rating
 
-print("Years and number of movies release each year")
+print("Years and number of movies release each year:")
 cursor.execute("select year,count(year) from movie group by year ")
-writeDir["Year and number of movies release each year:"] = cursor.fetchall()
+movPerYear = cursor.fetchall()
+print(movPerYear)
+writeDir["Year and number of movies release each year:"] = movPerYear
 
 print("Movie Distribution as per ratings")
 cursor.execute("select rating,count(rating) from movie group by rating")
-writeDir["Movie Distribution as per ratings"] = cursor.fetchall()
+movPerRating = cursor.fetchall()
+print(movPerRating)
+writeDir["Movie Distribution as per ratings"] = movPerRating
  
 ####### Write and Read report 
 report.write_report(writeDir)
@@ -56,10 +69,10 @@ queryReport = report.read_report()
 
 ####stemplot for movie/year
 xplot,yplot=vui.createaxis('Year and number of movies release each year:',queryReport)
-vui.createStemPlot(xplot,yplot,'Year','Number of movies','Number of movies/year')
+vui.createStemPlot(xplot,yplot,'Year','Number of movies','Number of movies/year','../data/output/movieperyear.png')
 #### stemplot for movie/ratings
 xplot,yplot=vui.createaxis('Movie Distribution as per ratings',queryReport)
-vui.createStemPlot(xplot,yplot,'Year','Number of movies','Number of movies/rating')
+vui.createStemPlot(xplot,yplot,'Year','Number of movies','Number of movies/rating','../data/output/movieperrating.png')
 
 ######## Example for UDF ######
 cursor.execute('add file hdfs:///tmp/time_convert.py')
@@ -69,6 +82,6 @@ cursor.execute("select transform (id,title,year,rating,dur) using 'python3 time_
 print(cursor.fetchone())
 
 ####### Drop table ######
-hive.drop_table(cursor,"project","temp_movie")
-hive.drop_table(cursor,"project","movie")
+# hive.drop_table(cursor,"project","temp_movie")
+# hive.drop_table(cursor,"project","movie")
 
