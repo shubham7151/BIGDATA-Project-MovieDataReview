@@ -1,17 +1,20 @@
 import matplotlib.pyplot as plt
+from numpy import save
 
-def createStemPlot(xplot,yplot,xlabel,ylabel,title):
+def createStemPlot(xplot,yplot,xlabel,ylabel,title,savePath):
     plt.title(title)
     plt.xlabel(xlabel)
     plt.ylabel(ylabel)
     plt.stem(xplot,yplot)
+    plt.savefig(savePath)
     plt.show()
 
-def createScatterPlot(xplot,yplot,xlabel,ylabel,title):
+def createScatterPlot(xplot,yplot,xlabel,ylabel,title,savePath):
     plt.title(title)
     plt.xlabel(xlabel)
     plt.ylabel(ylabel)
     plt.scatter(xplot,yplot)
+    plt.savefig(savePath)
     plt.show()
 
 def createaxis(key,data):
