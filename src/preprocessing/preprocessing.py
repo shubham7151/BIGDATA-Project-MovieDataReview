@@ -35,5 +35,4 @@ def fetch_and_convert_data (csv_dataindex):
         if index[-1] == -1:
             pass
         else:
-            print(index)
             index[-1]=int(index[-1])
