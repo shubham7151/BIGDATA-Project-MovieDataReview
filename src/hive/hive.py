@@ -8,7 +8,7 @@ def create_cursor (connection):
 
 def drop_table(cur, db_name ,table_name):
     try:
-        cur.execute('drop table' + db_name +'.'+table_name )
+        cur.execute('drop table ' + db_name +'.'+table_name )
         print("table dropped successful")
     except Exception as e:
         print(e)
