@@ -28,30 +28,10 @@
 - Handling the null values for different columns like duration, rating, year. 
 - Hive support timestamp datatype but duration was given in seconds hence it required UDF to convert it to time format (HH:MM:SS)
 
-# Project Structure
-- root
-  - src
-    - hive
-      - hive.py
-    - image
-      - logo.png
-    - miscellaneous
-      - miscell.py
-    - preprocessing
-      - preprocessing.py
-    - UDF
-      - time_convert.py
-    - visualization
-      - visualization
-  - docs
-    - queryOutput.txt
-  - data
-    - input
-      - dataset_movie.txt
-    - output
-      - report
-      - updated_dataset
+# Project directory tree
+![project tree](https://github.com/shubham7151/BIGDATA-Project-MovieDataReview/blob/master/src/image/Screenshot%20from%202022-07-05%2016-03-48.png "project tree")
    
+
 
 
 
