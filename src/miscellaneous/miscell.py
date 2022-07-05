@@ -1,6 +1,6 @@
 import json
 
-def write_report(data,path='../docs/report'):
+def write_report(data,path='../data/output/report'):
         try:
             with open (path,'w') as file:
                 json.dump(data,file)
@@ -10,7 +10,7 @@ def write_report(data,path='../docs/report'):
 
 def read_report():
         try:
-            with open('../docs/report','r') as report:
+            with open('../data/output/report','r') as report:
                 return json.load(report)
         except Exception as e:
             print(e)
